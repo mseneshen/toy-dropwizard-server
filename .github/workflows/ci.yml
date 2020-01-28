@@ -29,6 +29,10 @@ jobs:
         working-directory: .
         run: ./gradlew build -x test
 
+      - name: Run server in background
+        working-directory: .
+        run: java -jar build/libs/hello-friends-1.0-SNAPSHOT.jar server hello-world.yml
+
       - name: Run tests
         working-directory: .
         run: ./gradlew test
